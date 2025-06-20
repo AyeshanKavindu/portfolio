@@ -1,5 +1,23 @@
 'use strict';
 
+//show when scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  const sections = document.querySelectorAll('.testimonials, .clients');
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
 
 
 // element toggle function
@@ -56,6 +74,38 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+//Make testimonials scroll horizontally and hide scrollbar nicely
+document.addEventListener('DOMContentLoaded', () => {
+  function setupAutoSlide(selector, itemWidth, interval = 3000) {
+    const slider = document.querySelector(selector);
+    if (!slider) return;
+
+    let scrollPos = 0;
+
+    function autoSlide() {
+      scrollPos += itemWidth;
+
+      if (scrollPos >= slider.scrollWidth - slider.clientWidth) {
+        scrollPos = 0; // loop back
+      }
+
+      slider.scrollTo({
+        left: scrollPos,
+        behavior: 'smooth'
+      });
+    }
+
+    setInterval(autoSlide, interval);
+  }
+
+  // Initialize auto-slide for both lists
+  setupAutoSlide('.testimonials-list', 320, 3000);
+  setupAutoSlide('.clients-list', 320, 3000);
+});
+
+
+
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
@@ -98,7 +148,7 @@ overlay.addEventListener("click", testimonialsModalFunc);
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
 select.addEventListener("click", function () { elementToggleFunc(this); });
@@ -119,20 +169,19 @@ for (let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
-
   for (let i = 0; i < filterItems.length; i++) {
+    const itemCategory = filterItems[i].dataset.category.toLowerCase(); // normalize category
 
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (selectedValue === itemCategory) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
+};
 
-}
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];

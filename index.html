@@ -675,240 +675,216 @@
 
 
       <!--
-        - #PORTFOLIO
-      -->
+        - #PORTFOLIO -->
 
       <article class="portfolio" data-page="portfolio">
 
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <!-- Filter Buttons -->
+    <ul class="filter-list">
+      <li class="filter-item">
+        <button class="active" data-filter-btn>All</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>Front-end Development</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>WordPress</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>YouTube</button>
+      </li>
+    </ul>
+
+    <!-- Filter Dropdown (for mobile) -->
+    <div class="filter-select-box">
+      <button class="filter-select" data-select>
+        <div class="select-value" data-select-value>Select category</div>
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+      </button>
+
+      <ul class="select-list">
+        <li class="select-item">
+          <button data-select-item>All</button>
+        </li>
+        <li class="select-item">
+          <button data-select-item>Front-end Development</button>
+        </li>
+        <li class="select-item">
+          <button data-select-item>WordPress</button>
+        </li>
+        <li class="select-item">
+          <button data-select-item>YouTube</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Projects List -->
+    <ul class="project-list">
+
+      <!-- Front-end Projects -->
+      <li class="project-item active" data-filter-item data-category="front-end development">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/project-1.jpg" alt="finance" loading="lazy">
+          </figure>
+          <h3 class="project-title">Finance</h3>
+          <p class="project-category">Front-end Development</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="front-end development">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/project-2.png" alt="orizon" loading="lazy">
+          </figure>
+          <h3 class="project-title">Orizon</h3>
+          <p class="project-category">Front-end Development</p>
+        </a>
+      </li>
+
+      <!-- WordPress Projects -->
+      <li class="project-item active" data-filter-item data-category="wordpress">
+        <a href="https://cpapgerate.com/" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/project-3.jpg" alt="cpapgerate" loading="lazy">
+          </figure>
+          <h3 class="project-title">cpapgerate</h3>
+          <p class="project-category">A comprehensive e-commerce site specializing in CPAP machines and accessories for sleep apnea patients. Built with WordPress and WooCommerce, featuring a custom product catalog and secure checkout. I handled theme customization, responsive design, and optimized performance for faster loading.</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="wordpress">
+        <a href="https://shirgaisler.com/" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/project-5.png" alt="shirgaisler" loading="lazy">
+          </figure>
+          <h3 class="project-title">shirgaisler</h3>
+          <p class="project-category">A personal branding and portfolio website designed to showcase creative projects and professional achievements. Developed using WordPress with a focus on clean design, intuitive navigation, and mobile responsiveness. I customized the theme and integrated interactive elements to enhance user engagement.</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="wordpress">
+        <a href="https://bflanka.com/" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/bf.png" alt="bflanka" loading="lazy">
+          </figure>
+          <h3 class="project-title">bflanka</h3>
+          <p class="project-category">A corporate website for a Sri Lankan logistics and freight forwarding company. Developed on WordPress to provide detailed service overviews, contact access, and a clean, modern presentation. I handled full theme customization, mobile responsiveness, and SEO-friendly structure to improve visibility and usability.</p>
+
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="wordpress">
+        <a href="https://cinnamonsl.com/" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/cinnamonsl.png" alt="cinnamonsl" loading="lazy">
+          </figure>
+          <h3 class="project-title">cinnamonsl</h3>
+          <p class="project-category">A modern website for a Sri Lankan interior design and furnishing company. Built with WordPress to highlight their project portfolio, services, and aesthetic vision. I was responsible for customizing the theme, optimizing the layout for mobile devices, and ensuring a visually appealing, user-friendly experience.</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="wordpress">
+        <a href="https://tradersbaba.com/" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/project-6.png" alt="tradersbaba" loading="lazy">
+          </figure>
+          <h3 class="project-title">tradersbaba</h3>
+          <p class="project-category">A dynamic financial education platform offering resources, tutorials, and market insights for traders and investors. Built on WordPress, featuring custom content management, blog integration, and responsive design. I contributed to theme customization, plugin configuration, and performance optimization to enhance user experience.</p>
+        </a>
+      </li>
+
+
+
+      <!-- YouTube Projects -->
+      <li class="project-item active" data-filter-item data-category="youtube">
+        <a href="https://youtu.be/5qrcHajBkik?si=kPJ1mwBwTHHiRiNU" target ="_blank" >
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/basket.jpeg" alt="BasketBall" loading="lazy">
+          </figure>
+          <h3 class="project-title">BasketBall</h3>
+          <p class="project-category">Join me as I take my first steps in learning how to shoot a basketball! In this video, I practice basic shooting techniques, improve my form, and share my progress along the way. Whether you’re a beginner or just love basketball, come along for the journey!</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="youtube">
+        <a href="https://youtu.be/ygrvgUUTP0o?si=mVUpxRyAsG8dtXtZ" target ="_blank" >
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/tram.jpeg" alt="tram" loading="lazy">
+          </figure>
+          <h3 class="project-title">Tram</h3>
+          <p class="project-category">In this vlog, I take you on a relaxing journey through the streets, capturing the beauty and charm of city from the comfort of the tram. From stunning city views to hidden gems, this ride offers a unique perspective of the city like never before.</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="youtube">
+        <a href="https://www.youtube.com/live/V3YJ3eG4lvQ?si=_9gEykVjsKsXnaw7" target ="_blank" >
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="images/valo.jpeg" alt="valorant" loading="lazy">
+          </figure>
+          <h3 class="project-title">valorant</h3>
+          <p class="project-category">🎮 First Time Playing VALORANT! | Noob Tries to Clutch?! 🔫😂
+Hey legends! I’m jumping into VALORANT for the very first time – expect some laughs, chaos, and maybe even a clutch (by accident)! 😅</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="front-end development">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+          </figure>
+          <h3 class="project-title">Arrival</h3>
+          <p class="project-category">Front-end Development</p>
+        </a>
+      </li>
+
+      
+
+    </ul>
+  </section>
+</article>
 
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
 
 
 
