@@ -310,6 +310,10 @@ article.active {
   padding-bottom: 7px;
 }
 
+#typing {
+  color: #FDC965;
+}
+
 .article-title::after {
   content: "";
   position: absolute;
@@ -379,6 +383,9 @@ main {
 /*-----------------------------------*\
   #SIDEBAR
 \*-----------------------------------*/
+
+/* animation around the sidebar */
+
 
 .sidebar {
   margin-bottom: 15px;
@@ -538,6 +545,75 @@ main {
 /*-----------------------------------*\
   #NAVBAR
 \*-----------------------------------*/
+
+/* animate around border */
+.navbar {
+  position: relative;
+  overflow: hidden;
+  /* Add some basic styling to your navbar so you can see the animation clearly */
+  min-height: 50px; /* Example height */
+  background-color: #f0f0f0; /* Example background */
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  animation: border-animation 3s linear forwards; /* Use 'forwards' to ensure it reaches the end state */
+  animation-delay: 0.5s; /* Optional: Add a slight delay before the animation starts */
+}
+
+@keyframes border-animation {
+  0% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    opacity: 0; /* Start invisible */
+  }
+  1% { /* Start the animation color and opacity */
+    border-top-color: red;
+    opacity: 1;
+  }
+  25% {
+    border-top-color: red;
+    border-right-color: red;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    opacity: 1;
+  }
+  50% {
+    border-top-color: red;
+    border-right-color: red;
+    border-bottom-color: red;
+    border-left-color: transparent;
+    opacity: 1;
+  }
+  75% {
+    border-top-color: red;
+    border-right-color: red;
+    border-bottom-color: red;
+    border-left-color: red;
+    opacity: 1;
+  }
+  99% { /* Keep visible until just before the end */
+    border-top-color: red;
+    border-right-color: red;
+    border-bottom-color: red;
+    border-left-color: red;
+    opacity: 1;
+  }
+  100% {
+    border-color: transparent; /* Reset border to transparent */
+    opacity: 0; /* Fade out completely */
+  }
+}
+
 
 .navbar {
   position: fixed;

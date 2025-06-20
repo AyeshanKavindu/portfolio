@@ -75,34 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//Make testimonials scroll horizontally and hide scrollbar nicely
-document.addEventListener('DOMContentLoaded', () => {
-  function setupAutoSlide(selector, itemWidth, interval = 3000) {
-    const slider = document.querySelector(selector);
-    if (!slider) return;
-
-    let scrollPos = 0;
-
-    function autoSlide() {
-      scrollPos += itemWidth;
-
-      if (scrollPos >= slider.scrollWidth - slider.clientWidth) {
-        scrollPos = 0; // loop back
-      }
-
-      slider.scrollTo({
-        left: scrollPos,
-        behavior: 'smooth'
-      });
-    }
-
-    setInterval(autoSlide, interval);
-  }
-
-  // Initialize auto-slide for both lists
-  setupAutoSlide('.testimonials-list', 320, 3000);
-  setupAutoSlide('.clients-list', 320, 3000);
-});
+//animation arond the navigation bar
 
 
 
