@@ -390,6 +390,7 @@ main {
   display: flex;
   align-items: center;
   gap: 16px;
+
 }
 
 .contact-info {
@@ -404,6 +405,7 @@ main {
   margin-bottom: 2px;
 }
 
+/* auto type headings */
 #typing::after {
   content: '|';
   animation: blink 0.7s infinite;
@@ -413,6 +415,12 @@ main {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+#typing {
+  font-size: 18px;
+  color: #facc15;
+}
+
 
 
 .contact-info :is(.contact-link, time, address) {

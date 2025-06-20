@@ -14,53 +14,46 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-// sidebar auto typing
-<script>
-  const titles = [
-    "Front-End Developer",
-    "WordPress Developer",
-    "YouTuber"
-  ];
 
-  let count = 0;
-  let index = 0;
-  let currentText = '';
-  let letter = '';
+//auto typing titles
+document.addEventListener("DOMContentLoaded", function () {
+  const titles = ["Front-End Developer", "WordPress Developer", "YouTuber"];
+  let titleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-  function type() {
-    if (count === titles.length) {
-      count = 0;
-    }
+  function typeEffect() {
+    const currentTitle = titles[titleIndex];
+    const typingElement = document.getElementById("typing");
 
-    currentText = titles[count];
-    letter = currentText.slice(0, ++index);
+    if (!typingElement) return;
 
-    document.getElementById('typing').textContent = letter;
-
-    if (letter.length === currentText.length) {
-      setTimeout(erase, 1500); // Pause before erasing
+    if (isDeleting) {
+      charIndex--;
+      typingElement.textContent = currentTitle.substring(0, charIndex);
     } else {
-      setTimeout(type, 100);
+      charIndex++;
+      typingElement.textContent = currentTitle.substring(0, charIndex);
     }
+
+    if (!isDeleting && charIndex === currentTitle.length) {
+      setTimeout(() => {
+        isDeleting = true;
+        typeEffect();
+      }, 1500);
+      return;
+    }
+
+    if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      titleIndex = (titleIndex + 1) % titles.length;
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
   }
 
-  function erase() {
-    letter = currentText.slice(0, --index);
-    document.getElementById('typing').textContent = letter;
-
-    if (letter.length === 0) {
-      count++;
-      setTimeout(type, 300); // Pause before typing next word
-    } else {
-      setTimeout(erase, 50);
-    }
-  }
-
-  // Start typing effect
-  type();
-</script>
-
-
+  typeEffect();
+});
 
 
 // testimonials variables
