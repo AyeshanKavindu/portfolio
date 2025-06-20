@@ -14,6 +14,53 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
+// sidebar auto typing
+<script>
+  const titles = [
+    "Front-End Developer",
+    "WordPress Developer",
+    "YouTuber"
+  ];
+
+  let count = 0;
+  let index = 0;
+  let currentText = '';
+  let letter = '';
+
+  function type() {
+    if (count === titles.length) {
+      count = 0;
+    }
+
+    currentText = titles[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById('typing').textContent = letter;
+
+    if (letter.length === currentText.length) {
+      setTimeout(erase, 1500); // Pause before erasing
+    } else {
+      setTimeout(type, 100);
+    }
+  }
+
+  function erase() {
+    letter = currentText.slice(0, --index);
+    document.getElementById('typing').textContent = letter;
+
+    if (letter.length === 0) {
+      count++;
+      setTimeout(type, 300); // Pause before typing next word
+    } else {
+      setTimeout(erase, 50);
+    }
+  }
+
+  // Start typing effect
+  type();
+</script>
+
+
 
 
 // testimonials variables

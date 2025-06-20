@@ -1,25 +1,13 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-/**
- * copyright 2022 @codewithsadee
- */
 
 
 
 
 
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
+  /* custom property */
 
 :root {
 
-  /**
-   * colors
-   */
+  /* colors */
 
   /* gradient */
 
@@ -69,9 +57,7 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
-  /**
-   * typography
-   */
+  /* typography */
 
   /* font-family */
   --ff-poppins: 'Poppins', sans-serif;
@@ -92,9 +78,7 @@
   --fw-500: 500;
   --fw-600: 600;
 
-  /**
-   * shadow
-   */
+  /* shadow */
   
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
@@ -102,9 +86,7 @@
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-  /**
-   * transition
-   */
+  /* transition */
 
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
@@ -421,6 +403,17 @@ main {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
+
+#typing::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
