@@ -57,6 +57,8 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
+  
+
   /* typography */
 
   /* font-family */
@@ -192,6 +194,10 @@ body { background: var(--smoky-black); }
   }
 }
 
+/* autoscroll testimonials */
+
+
+
 .testimonials,
 .clients {
   opacity: 0;
@@ -208,8 +214,8 @@ body { background: var(--smoky-black); }
 .avatar-box {
   transform: translateX(-100%);
   opacity: 0;
-  animation: slideInLeftSlow 2.5s ease-out forwards,
-             glowFrame 1s ease-in-out 2.5s forwards;
+  animation: slideInLeftSlow 1.5s ease-out forwards,
+             glowFrame 2.5s ease-in-out 1.5s forwards;
   position: relative;
 }
 
@@ -581,7 +587,7 @@ main {
   }
   1% {
     box-shadow: 
-      0 -2px 0 0px red inset, /* Top (simulated) */
+      0 -2px 0 0px #FDCB66 inset, /* Top (simulated) */
       0 0 0 0px transparent,
       0 0 0 0px transparent,
       0 0 0 0px transparent;
@@ -589,34 +595,34 @@ main {
   }
   25% {
     box-shadow: 
-      0 -2px 0 0px red inset,
-      2px 0 0 0px red inset, /* Right (simulated) */
+      0 -2px 0 0px #FDCB66 inset,
+      2px 0 0 0px #FDCB66 inset, /* Right (simulated) */
       0 0 0 0px transparent,
       0 0 0 0px transparent;
     opacity: 1;
   }
   50% {
     box-shadow: 
-      0 -2px 0 0px red inset,
-      2px 0 0 0px red inset,
-      0 2px 0 0px red inset, /* Bottom (simulated) */
+      0 -2px 0 0px #FDCB66 inset,
+      2px 0 0 0px #FDCB66 inset,
+      0 2px 0 0px #FDCB66 inset, /* Bottom (simulated) */
       0 0 0 0px transparent;
     opacity: 1;
   }
   75% {
     box-shadow: 
-      0 -2px 0 0px red inset,
-      2px 0 0 0px red inset,
-      0 2px 0 0px red inset,
-      -2px 0 0 0px red inset; /* Left (simulated) */
+      0 -2px 0 0px #FDCB66 inset,
+      2px 0 0 0px #FDCB66 inset,
+      0 2px 0 0px #FDCB66 inset,
+      -2px 0 0 0px #FDCB66 inset; /* Left (simulated) */
     opacity: 1;
   }
   99% {
     box-shadow: 
-      0 -2px 0 0px red inset,
-      2px 0 0 0px red inset,
-      0 2px 0 0px red inset,
-      -2px 0 0 0px red inset;
+      0 -2px 0 0px #FDCB66 inset,
+      2px 0 0 0px #FDCB66 inset,
+      0 2px 0 0px #FDCB66 inset,
+      -2px 0 0 0px #FDCB66 inset;
     opacity: 1;
   }
  100% {
@@ -688,6 +694,21 @@ main {
 /**
  * #service 
  */
+
+ .service-item {
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.2s; /* optional: delay for effect */
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 .service { margin-bottom: 35px; }
 

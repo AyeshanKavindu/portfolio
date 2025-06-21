@@ -75,7 +75,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//animation arond the navigation bar
+//autosliding testimonial
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.testimonials-list');
+  const slideAmount = 320; // width + gap of one item approx (adjust if needed)
+  let scrollPos = 0;
+
+  function autoSlide() {
+    if (!slider) return;
+    scrollPos += slideAmount;
+
+    if (scrollPos >= slider.scrollWidth - slider.clientWidth) {
+      // Loop back to start
+      scrollPos = 0;
+    }
+
+    slider.scrollTo({
+      left: scrollPos,
+      behavior: 'smooth'
+    });
+  }
+
+  // Slide every 3 seconds (adjust speed here)
+  setInterval(autoSlide, 3000);
+});
+
+//autosliding clients
+document.addEventListener('DOMContentLoaded', () => {
+  function setupAutoSlide(selector, slideAmount = 320, interval = 3000) {
+    const slider = document.querySelector(selector);
+    if (!slider) return;
+
+    let scrollPos = 0;
+
+    function autoSlide() {
+      scrollPos += slideAmount;
+
+      if (scrollPos >= slider.scrollWidth - slider.clientWidth) {
+        scrollPos = 0; // Loop back to start
+      }
+
+      slider.scrollTo({
+        left: scrollPos,
+        behavior: 'smooth'
+      });
+    }
+
+    setInterval(autoSlide, interval);
+  }
+
+  // Apply to both sliders
+  setupAutoSlide('.testimonials-list');
+  setupAutoSlide('.clients-list');
+});
+
 
 
 
@@ -219,3 +272,5 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
