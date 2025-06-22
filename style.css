@@ -6,44 +6,42 @@
   /* custom property */
 
 :root {
+  /* Dark Mode (Default) */
 
   /* colors */
-
   /* gradient */
-
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
+    to bottom right,
+    hsl(240, 1%, 25%) 3%,
     hsl(0, 0%, 19%) 97%
   );
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
+    to bottom right,
+    hsla(240, 1%, 18%, 0.251) 0%,
     hsla(240, 2%, 11%, 0) 100%
   ), hsl(240, 2%, 13%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
+    to bottom right,
+    hsl(45, 100%, 71%) 0%,
     hsla(36, 100%, 69%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
+    135deg,
+    hsla(45, 100%, 71%, 0.251) 0%,
     hsla(35, 100%, 68%, 0) 59.86%
   ), hsl(240, 2%, 13%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
     hsla(0, 0%, 25%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
+    to right,
+    hsl(45, 100%, 72%),
     hsl(35, 100%, 68%)
   );
 
   /* solid */
-
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
@@ -57,14 +55,8 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
-  
-
-  /* typography */
-
-  /* font-family */
+  /* typography, shadow, transition (these typically don't change much between modes, but you can adjust if needed) */
   --ff-poppins: 'Poppins', sans-serif;
-
-  /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -73,29 +65,86 @@
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
-
-  /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-
-  /* shadow */
-  
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-
-  /* transition */
-
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
+}
+
+.light-mode {
+  /* Light Mode Overrides */
+
+  /* solid colors */
+  --jet: hsl(0, 0%, 90%); /* Example: Lighter background */
+  --onyx: hsl(0, 0%, 95%); /* Example: Even lighter background */
+  --eerie-black-1: hsl(0, 0%, 98%); /* Example: Almost white background */
+  --eerie-black-2: hsl(0, 0%, 99%); /* Example: Very light background */
+  --smoky-black: hsl(0, 0%, 20%); /* Example: Darker text for contrast */
+
+  --white-1: hsl(240, 2%, 13%); /* Example: Dark text for light background */
+  --white-2: hsl(240, 2%, 12%); /* Example: Slightly darker text */
+
+  /* You'll need to define light mode equivalents for your gradients as well */
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 90%) 3%,
+    hsl(0, 0%, 95%) 97%
+  );
+  --bg-gradient-jet: linear-gradient(
+    to bottom right,
+    hsla(0, 0%, 90%, 0.251) 0%,
+    hsla(0, 0%, 95%, 0) 100%
+  ), hsl(0, 0%, 98%);
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(200, 100%, 71%) 0%, /* Example: A light blue/cyan for contrast */
+    hsla(210, 100%, 69%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+    135deg,
+    hsla(200, 100%, 71%, 0.251) 0%,
+    hsla(210, 100%, 68%, 0) 59.86%
+  ), hsl(0, 0%, 98%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 70%) 0%, /* Example: Lighter border */
+    hsla(0, 0%, 70%, 0) 50%
+  );
+  --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(200, 100%, 40%), /* Example: Darker blue for text */
+    hsl(210, 100%, 35%)
+  );
+
+
+  /* Also adjust shadows for light mode if they are too prominent */
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.05);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1);
+
+  /* Keep original orange-yellow-crayola, vegas-gold, bittersweet-shimmer if they are accents */
+  /* If you use light-gray for text or background, you'd likely want to make it darker in light mode */
+  --light-gray: hsl(0, 0%, 30%);
+  --light-gray-70: hsla(0, 0%, 30%, 0.7);
 
 }
 
-
+.avatar-box:hover {
+    transform: scale(1.05); /* This hover effect still applies to the figure */
+}
+.avatar-box img {
+    cursor: pointer; /* This is the hand cursor */
+    /* ... other styles ... */
+}
 
 
 
@@ -1033,6 +1082,19 @@ main {
  * skills 
  */
 
+ /* section animation */
+ .skill {
+  opacity: 0;
+  transform: translateX(100px); /* Start off shifted right */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.skill.visible {
+  opacity: 1;
+  transform: translateX(0); /* Slide to original position */
+}
+
+
 .skills-title { margin-bottom: 20px; }
 
 .skills-list { padding: 20px; }
@@ -1232,6 +1294,8 @@ main {
 /*-----------------------------------*\
   #BLOG
 \*-----------------------------------*/
+
+
 
 .blog-posts { margin-bottom: 10px; }
 

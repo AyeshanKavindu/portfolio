@@ -274,3 +274,64 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 
+//skill set animation
+document.addEventListener('DOMContentLoaded', () => {
+  const skillSection = document.querySelector('.skill');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          skillSection.classList.add('visible');
+          observer.unobserve(skillSection); // Animate only once
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% visible
+    }
+  );
+
+  observer.observe(skillSection);
+});
+
+
+// In your JavaScript file (e.g., script.js)
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Get a reference to your avatar figure element, which now has the ID 'theme-toggle'
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body; // Or document.documentElement if you prefer to put the class on <html>
+
+  // Function to set the theme
+  function setTheme(theme) {
+    if (theme === 'light') {
+      body.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+    } else {
+      // Dark mode
+      body.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  // Check for saved theme preference on page load
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'light') {
+    // If the saved theme is explicitly 'light', set it to light mode
+    setTheme('light');
+  } else {
+    // In all other cases (no saved theme, or saved theme is 'dark'), default to dark mode
+    setTheme('dark');
+  }
+
+  // Add an event listener to your avatar figure
+  themeToggle.addEventListener('click', () => {
+    if (body.classList.contains('light-mode')) {
+      setTheme('dark'); // Currently light, switch to dark
+    } else {
+      setTheme('light'); // Currently dark, switch to light
+    }
+  });
+});
