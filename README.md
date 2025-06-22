@@ -15,3 +15,4 @@ A fully responsive personal portfolio website built using HTML, CSS, and JavaScr
 - JavaScript
 
 
+![Screenshot 2025-06-21 104146](https://github.com/user-attachments/assets/c1831de1-48d7-4038-a902-d7ff542d1f5e)
